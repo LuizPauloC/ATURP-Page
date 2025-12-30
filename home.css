@@ -1,0 +1,279 @@
+/* -----GERAL----- */
+.hidden {
+	display: none;
+}
+
+/* https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80 */
+/* -----HERO----- */
+.hero {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: 100dvh;
+	background-color: #425065;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+		url('img/img-galeria/paisagem3-grande.JPG');
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+}
+
+/* -----HERO NAV----- */
+.hero nav {
+	display: flex;
+	position: relative;
+	justify-content: space-between;
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 1330px;
+	padding: 1.5rem;
+	z-index: 20;
+}
+
+/* -----DESKTOP MENU----- */
+.desktop-menu {
+	gap: 2rem;
+	align-items: center;
+	box-sizing: border-box;
+}
+/* DESKTOP MENU ITEMS */
+.desktop-menu button {
+	position: relative;
+	color: #fff;
+	font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+		'Noto Color Emoji';
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 20px;
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+	transition: 0.2s;
+}
+/* DESKTOP MENU HOVER */
+.desktop-menu button:hover {
+	color: #ffffffcc;
+}
+
+/* -----LANG + MOBILE MENU----- */
+.container {
+	display: flex;
+	gap: 16px;
+}
+
+/* -----LANG----- */
+.lang-select {
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+	height: 38px;
+	padding: 8px 12px;
+	font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+		'Noto Color Emoji';
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 24px;
+	color: #ffffffe6;
+	border: 1px solid #fff3;
+	border-radius: 100px;
+	gap: 0.5rem;
+	cursor: pointer;
+	transition: 0.2s;
+}
+.lang-select svg {
+	width: 16px;
+	height: auto;
+}
+/* LANG HOVER */
+.lang-select:hover {
+	border-color: #ffffff90;
+}
+
+/* -----MENU PLACEHOLDER----- */
+.menu-placeholder {
+	width: 40px;
+	height: 40px;
+	display: block;
+}
+
+/* -----MOBILE MENU----- */
+.mobile-menu {
+	display: block;
+	position: absolute;
+	top: -1px;
+	right: 0;
+	width: 40px;
+	height: 40px;
+	background-color: transparent;
+	font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+		'Noto Color Emoji';
+	color: #fff;
+	overflow: hidden;
+	transition: top 0.5s, right 0.5s, width 0.5s, height 0.5s, background-color 0.2s;
+	z-index: 5;
+	border-radius: 20px;
+}
+.mobile-menu.open {
+	width: 200px;
+	height: max-content;
+	background-color: #111111;
+}
+/* MOBILE MENU BTN */
+.mobile-menu-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	background-color: none;
+	cursor: pointer;
+}
+/* MOBILE MENU FONTS_AWESOME */
+.fa-menu {
+	position: absolute;
+	line-height: 0px;
+	font-size: 1.2rem;
+	transition: 0.3s ease;
+}
+.fa-bars.hidden {
+	opacity: 0;
+	transform: rotate(-90deg);
+}
+.fa-xmark.hidden {
+	opacity: 0;
+	transform: rotate(90deg);
+}
+/* MOBILE MENU OPEN NAV */
+.mobile-menu-list {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	align-items: center;
+	padding: 0 90px;
+	margin: 30px 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.5s ease;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.mobile-menu-list.open {
+	opacity: 1;
+	visibility: visible;
+}
+
+/* -----HERO CONTENT----- */
+.hero-content {
+	position: relative;
+	align-items: center;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+	padding: 0 1.5rem;
+	height: calc(100vh - 120px);
+	z-index: 10;
+	font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+		'Noto Color Emoji';
+	line-height: 24px;
+	text-align: center;
+}
+/* -----CONTENT TITLE----- */
+.hero-content h1 {
+	color: #fff;
+	font-size: 3em;
+	font-weight: 700;
+	letter-spacing: -0.025em;
+	line-height: 1;
+}
+/* -----CONTENT TEXT----- */
+.hero-content p {
+	color: #fffc;
+	font-size: 1.125rem;
+	font-weight: 300;
+	margin-top: 1.5rem;
+	max-width: 42rem;
+	line-height: 1.625;
+}
+/* -----CONTENT BUTTON----- */
+.hero-down-button {
+	bottom: 3rem;
+	position: absolute;
+	cursor: pointer;
+	background-color: transparent;
+	background-image: none;
+	text-transform: none;
+	color: inherit;
+	font-size: 100%;
+	font-weight: inherit;
+	line-height: inherit;
+	border: 0;
+}
+/* -----CONTENT BUTTON DIV----- */
+.hero-down-button div {
+	color: #ffffff80;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	width: 3.5rem;
+	height: 3.5rem;
+	border: 2px solid #ffffff80;
+	border-radius: 100px;
+	transition: 0.3s;
+}
+/* -----CONTENT BUTTON SVG----- */
+.hero-down-button svg {
+	color: #ffffffb3;
+	width: 1.5rem;
+	height: 1.5rem;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	cursor: pointer;
+	text-transform: none;
+	box-sizing: border-box;
+	transition: 0.5s;
+}
+/* -----CONTENT BUTTON HOVER----- */
+.hero-down-button div:hover {
+	background-color: #ffffff11;
+	border-color: #fff;
+}
+.hero-down-button div:hover svg {
+	color: #fff;
+}
+
+/* DESKTOP SCREEN */
+@media screen and (min-width: 768px) {
+	.mobile-menu {
+		display: none;
+	}
+	.menu-placeholder {
+		display: none;
+	}
+	.desktop-menu {
+		display: flex;
+	}
+
+	.hero-content h1 {
+		font-size: 4.5rem;
+	}
+	.hero-content p {
+		font-size: 1.25rem;
+	}
+}
+
+/* BIG DESKTOP SCREEN */
+@media screen and (min-width: 1024px) {
+	.hero-content h1 {
+		font-size: 6rem;
+	}
+}
