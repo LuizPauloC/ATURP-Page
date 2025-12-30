@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Pancas Guia Turístico</title>
+		<!-- STYLES -->
+		<link rel="stylesheet" href="reset.css" />
+		<link rel="stylesheet" href="home.css" />
+		<!-- AOS -->
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+		<!-- data-aos="fade-up" -->
+		<!-- FONTS AWESOME -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+			integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<!-- <style>
+			.with-scroll-bars-hidden {
+				overflow: hidden !important;
+				padding-right: 0px !important;
+			}
+			body[data-scroll-locked] {
+				overflow: hidden !important;
+				overscroll-behavior: contain;
+				position: relative !important;
+				padding-left: 0px;
+				padding-top: 0px;
+				padding-right: 0px;
+				margin-left: 0;
+				margin-top: 0;
+				margin-right: 0px !important;
+			}
+			.right-scroll-bar-position {
+				right: 0px !important;
+			}
+			.width-before-scroll-bar {
+				margin-right: 0px !important;
+			}
+			.right-scroll-bar-position .right-scroll-bar-position {
+				right: 0 !important;
+			}
+			.width-before-scroll-bar .width-before-scroll-bar {
+				margin-right: 0 !important;
+			}
+			body[data-scroll-locked] {
+				--removed-body-scroll-bar-size: 0px;
+			}
+		</style> -->
+	</head>
+	<body>
+		<!------ Hero Section Begin ------>
+		<section class="hero">
+			<nav>
+				<div class="logo" data-aos="fade-right" data-aos-duration="600" data-aos-once="true">
+					<img src="img/aturp-logo-nobk.png" alt="aturp-logo" width="auto" height="40px" />
+				</div>
+
+				<div class="desktop-menu hidden" data-aos="fade-down" data-aos-duration="600" data-aos-once="true">
+					<button>Atrativos</button>
+					<button>Mapa</button>
+					<button>Como Chegar</button>
+					<button>Informações</button>
+				</div>
+
+				<span class="container" data-aos="fade-left" data-aos-duration="600" data-aos-once="true">
+					<div class="lang-div">
+						<button class="lang-select">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="lucide lucide-globe w-4 h-4"
+							>
+								<circle cx="12" cy="12" r="10"></circle>
+								<path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+								<path d="M2 12h20"></path>
+							</svg>
+							<p class="selected-lang">PT</p>
+						</button>
+
+						<ul class="lang-select-options">
+							<li class="lang-option" value="PT">PT</li>
+							<li class="lang-option" value="EN">EN</li>
+							<li class="lang-option" value="ES">ES</li>
+							<li class="lang-option" value="RU">RU</li>
+						</ul>
+					</div>
+
+					<div class="menu-placeholder"></div>
+
+					<div class="mobile-menu">
+						<a class="mobile-menu-btn">
+							<li class="fa fa-menu fa-bars"></li>
+							<li class="fa fa-menu fa-xmark hidden"></li>
+						</a>
+						<ul class="mobile-menu-list">
+							<li class="nav-item">Atrativos</li>
+							<li class="nav-item">Mapa</li>
+							<li class="nav-item">Como Chegar</li>
+							<li class="nav-item">Informações</li>
+						</ul>
+					</div>
+				</span>
+			</nav>
+
+			<div class="hero-content">
+				<h1 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200" data-aos-once="true">
+					Descubra Pancas
+				</h1>
+				<p data-aos="fade-up" data-aos-delay="550" data-aos-duration="1000" data-aos-once="true">
+					Um paraíso de pedras gigantes, aventuras radicais e natureza exuberante no coração do Espírito Santo
+				</p>
+				<button class="hero-scroll-button" data-aos="fade-down" data-aos-duration="600" data-aos-once="true">
+					<div>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="lucide lucide-chevron-down w-6 h-6 text-white/70 group-hover:text-white transition-colors"
+						>
+							<path d="m6 9 6 6 6-6"></path>
+						</svg>
+					</div>
+				</button>
+			</div>
+		</section>
+		<!------ Hero Section End ------>
+		<main id="main">
+			<section class="tour-guide-section">
+				<div class="tour-guide-header">
+					<span>Explore Pancas</span>
+					<h2>Guia Turístico</h2>
+					<p>Conheça os principais atrativos da região</p>
+					<button>Acesse ao Guia Completo</button>
+				</div>
+
+				<div class="tour-guide-container">
+					<!-- Attraction Cards Here -->
+					<div class="attraction-card">
+						<h3>Pontões Capixabas</h3>
+					</div>
+					<div class="attraction-card">
+						<h3>Trilhas</h3>
+					</div>
+					<div class="attraction-card">
+						<h3>Tirolesa</h3>
+					</div>
+					<div class="attraction-card">
+						<h3>Vôo Livre</h3>
+					</div>
+				</div>
+			</section>
+			<section>
+				<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1n3roSl026oFycgrldBlMfpHwH02qNxo&ehbc=2E312F&noprof=1" width="300" height="450"></iframe>
+			</section>
+		</main>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script src="script.js"></script>
+		<script>
+			AOS.init();
+		</script>
+	</body>
+</html>
