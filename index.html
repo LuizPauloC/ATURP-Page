@@ -6,10 +6,7 @@
 		<title>Pancas Guia Turístico</title>
 		<!-- STYLES -->
 		<link rel="stylesheet" href="reset.css" />
-		<link rel="stylesheet" href="home.css" />
-		<!-- AOS -->
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-		<!-- data-aos="fade-up" -->
+		<link rel="stylesheet" href="style.css" />
 		<!-- FONTS AWESOME -->
 		<link
 			rel="stylesheet"
@@ -18,56 +15,26 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
-		<!-- <style>
-			.with-scroll-bars-hidden {
-				overflow: hidden !important;
-				padding-right: 0px !important;
-			}
-			body[data-scroll-locked] {
-				overflow: hidden !important;
-				overscroll-behavior: contain;
-				position: relative !important;
-				padding-left: 0px;
-				padding-top: 0px;
-				padding-right: 0px;
-				margin-left: 0;
-				margin-top: 0;
-				margin-right: 0px !important;
-			}
-			.right-scroll-bar-position {
-				right: 0px !important;
-			}
-			.width-before-scroll-bar {
-				margin-right: 0px !important;
-			}
-			.right-scroll-bar-position .right-scroll-bar-position {
-				right: 0 !important;
-			}
-			.width-before-scroll-bar .width-before-scroll-bar {
-				margin-right: 0 !important;
-			}
-			body[data-scroll-locked] {
-				--removed-body-scroll-bar-size: 0px;
-			}
-		</style> -->
+		<!-- ICON -->
+		<link rel="icon" type="image/png" href="img/page-icon.png" />
 	</head>
 	<body>
 		<!------ Hero Section Begin ------>
 		<section class="hero">
 			<nav>
-				<div class="logo" data-aos="fade-right" data-aos-duration="600" data-aos-once="true">
+				<div class="logo">
 					<img src="img/aturp-logo-nobk.png" alt="aturp-logo" width="auto" height="40px" />
 				</div>
 
-				<div class="desktop-menu hidden" data-aos="fade-down" data-aos-duration="600" data-aos-once="true">
-					<button>Atrativos</button>
-					<button>Mapa</button>
-					<button>Como Chegar</button>
-					<button>Informações</button>
+				<div class="desktop-menu hidden">
+					<button data-scroll="#atrativos">Atrativos</button>
+					<button data-scroll="#mapa">Mapa</button>
+					<button data-scroll="#como-chegar">Como Chegar</button>
+					<button data-scroll="#informacoes">Informações</button>
 				</div>
 
-				<span class="container" data-aos="fade-left" data-aos-duration="600" data-aos-once="true">
-					<div class="lang-div">
+				<div class="nav-right-section">
+					<div class="lang-select-container">
 						<button class="lang-select">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -104,23 +71,19 @@
 							<li class="fa fa-menu fa-xmark hidden"></li>
 						</a>
 						<ul class="mobile-menu-list">
-							<li class="nav-item">Atrativos</li>
-							<li class="nav-item">Mapa</li>
-							<li class="nav-item">Como Chegar</li>
-							<li class="nav-item">Informações</li>
+							<li class="nav-item nav-atrativos" data-scroll="#atrativos">Atrativos</li>
+							<li class="nav-item nav-mapa" data-scroll="#mapa">Mapa</li>
+							<li class="nav-item nav-como-chegar" data-scroll="#como-chegar">Como Chegar</li>
+							<li class="nav-item nav-informacoes" data-scroll="#informacoes">Informações</li>
 						</ul>
 					</div>
-				</span>
+				</div>
 			</nav>
 
 			<div class="hero-content">
-				<h1 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200" data-aos-once="true">
-					Descubra Pancas
-				</h1>
-				<p data-aos="fade-up" data-aos-delay="550" data-aos-duration="1000" data-aos-once="true">
-					Um paraíso de pedras gigantes, aventuras radicais e natureza exuberante no coração do Espírito Santo
-				</p>
-				<button class="hero-scroll-button" data-aos="fade-down" data-aos-duration="600" data-aos-once="true">
+				<h1>Descubra Pancas</h1>
+				<p>Um paraíso de pedras gigantes, aventuras radicais e natureza exuberante no coração do Espírito Santo</p>
+				<button class="hero-scroll-button">
 					<div>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -142,38 +105,90 @@
 		</section>
 		<!------ Hero Section End ------>
 		<main id="main">
-			<section class="tour-guide-section">
+			<section class="tour-guide-section attractions" id="atrativos">
 				<div class="tour-guide-header">
 					<span>Explore Pancas</span>
 					<h2>Guia Turístico</h2>
 					<p>Conheça os principais atrativos da região</p>
-					<button>Acesse ao Guia Completo</button>
 				</div>
 
 				<div class="tour-guide-container">
 					<!-- Attraction Cards Here -->
-					<div class="attraction-card">
+					<div class="attraction-card pontoes-capixabas">
 						<h3>Pontões Capixabas</h3>
 					</div>
-					<div class="attraction-card">
+					<div class="attraction-card trilhas">
 						<h3>Trilhas</h3>
 					</div>
-					<div class="attraction-card">
+					<div class="attraction-card tirolesa">
 						<h3>Tirolesa</h3>
 					</div>
-					<div class="attraction-card">
+					<div class="attraction-card voo-livre">
 						<h3>Vôo Livre</h3>
 					</div>
 				</div>
+				<button>Acesse ao Guia Completo</button>
 			</section>
-			<section>
-				<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1n3roSl026oFycgrldBlMfpHwH02qNxo&ehbc=2E312F&noprof=1" width="300" height="450"></iframe>
+			<section class="tour-guide-section guide-map" id="mapa">
+				<div class="tour-guide-header">
+					<span>Localização</span>
+					<h2>Mapa Interativo</h2>
+					<p>Encontre todos os pontos turísticos de Pancas</p>
+					<iframe
+						src="https://www.google.com/maps/d/u/0/embed?mid=1n3roSl026oFycgrldBlMfpHwH02qNxo&ehbc=2E312F&noprof=1"
+						width="300"
+						height="450"
+					></iframe>
+					<div class="map-legend">
+						<ul>
+							<li><span class="legend-icon monumentos"></span>Monumentos Naturais</li>
+							<li><span class="legend-icon gastronomia"></span>Gastronomia</li>
+							<li><span class="legend-icon hospedagem"></span>Hospedagem</li>
+							<li><span class="legend-icon servicos"></span>Serviços</li>
+							<li><span class="legend-icon experiencias"></span>Experiências Locais</li>
+						</ul>
+					</div>
+				</div>
 			</section>
 		</main>
-		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<!-----FOOTER----->
+		<!-- <footer>
+			<div class="footer-top-container">
+				<div class="footer-top">
+					<nav>
+						<ul>
+							<li><a target="_self">Início</a></li>
+							<li><a target="_self">Sobre</a></li>
+							<li><a target="_self">Galeria</a></li>
+						</ul>
+					</nav>
+					<h2 class="footer-logo-title">ATURP</h2>
+				</div>
+			</div>
+
+			<div class="footer-break-line"></div>
+
+			<div class="footer-about">
+				<h2 class="footer-about-title">ATURP – Associação Turística de Pancas</h2>
+				<p class="footer-about-text">
+					Promovendo o turismo, a cultura e o desenvolvimento sustentável de Pancas, valorizando suas belezas
+					naturais e tradições.
+				</p>
+				<div class="midias">
+					<ul>
+						<li name="instagram">
+							<a href="https://www.instagram.com/aturp_"><i class="fa-brands fa-media fa-instagram"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			SUB_FOOTER 
+			<div class="sub-footer">
+				<div>
+					<p>© 2026 ATURP – Associação Turística de Pancas</p>
+				</div>
+			</div>
+		</footer> -->
 		<script src="script.js"></script>
-		<script>
-			AOS.init();
-		</script>
 	</body>
 </html>

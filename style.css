@@ -3,13 +3,97 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-		'Noto Color Emoji';
+	-webkit-tap-highlight-color: transparent;
 }
 .hidden {
 	display: none;
 }
 
+/* -----SITE LOADING----- */
+.is-loading body {
+	visibility: hidden;
+}
+body {
+	font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+		'Noto Color Emoji';
+	opacity: 0;
+	transition: opacity 300ms ease;
+}
+body.is-ready {
+	opacity: 1;
+}
+
+/* -----ANIMAÇÕES----- */
+.hero-content h1,
+.hero-content p,
+.hero-scroll-button {
+	opacity: 0;
+	transform: translateY(80px);
+}
+.logo,
+.desktop-menu,
+.nav-right-section,
+.mobile-menu {
+	opacity: 0;
+}
+
+.logo {
+	transform: translateX(-80px);
+}
+.desktop-menu {
+	transform: translateY(-50px);
+}
+.nav-right-section,
+.mobile-menu {
+	transform: translateX(80px);
+}
+
+@keyframes fadeUp {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes fadeDown {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes fadeRight {
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes fadeLeft {
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.hero-content.animate-in h1 {
+	animation: fadeUp 600ms ease 100ms forwards;
+}
+.hero-content.animate-in p {
+	animation: fadeUp 600ms ease 250ms forwards;
+}
+.hero-content.animate-in .hero-scroll-button {
+	animation: fadeUp 600ms ease 400ms forwards;
+}
+.logo {
+	animation: fadeRight 500ms ease 50ms forwards;
+}
+.desktop-menu {
+	animation: fadeDown 500ms ease 50ms forwards;
+}
+.nav-right-section {
+	animation: fadeLeft 500ms ease 50ms forwards;
+}
+.mobile-menu {
+	animation: fadeLeft 500ms ease 50ms forwards;
+}
 /* --------HERO-------- */
 .hero {
 	display: flex;
@@ -36,7 +120,7 @@
 	padding: 1.5rem;
 	z-index: 20;
 }
-
+/* -----LOGO----- */
 /* -----DESKTOP MENU----- */
 .desktop-menu {
 	gap: 2rem;
@@ -47,10 +131,8 @@
 .desktop-menu button {
 	position: relative;
 	color: #fff;
-	font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-		'Noto Color Emoji';
-	font-weight: 500;
-	font-size: 14px;
+	font-weight: 400;
+	font-size: 1rem;
 	line-height: 20px;
 	cursor: pointer;
 	background-color: transparent;
@@ -63,12 +145,12 @@
 }
 
 /* -----LANG + MOBILE MENU----- */
-.container {
+.nav-right-section {
 	display: flex;
 	gap: 16px;
 }
 
-.lang-div {
+.lang-select-container {
 	position: relative;
 }
 
@@ -80,14 +162,12 @@
 	width: 70px;
 	height: 38px;
 	padding: 8px 12px;
-	font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-		'Noto Color Emoji';
 	font-size: 14px;
 	font-weight: 500;
 	line-height: 24px;
 	background-color: transparent;
 	color: #ffffffe6;
-	border: 1px solid #fff3;
+	border: 0.15rem solid #fff3;
 	border-radius: 100px;
 	gap: 0.5rem;
 	cursor: pointer;
@@ -96,6 +176,10 @@
 .lang-select svg {
 	width: 16px;
 	height: auto;
+}
+.selected-lang {
+	width: 24px;
+	text-align: center;
 }
 /* LANG HOVER */
 .lang-select:hover {
@@ -122,8 +206,6 @@
 }
 .lang-option {
 	padding: 8px 12px;
-	font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-		'Noto Color Emoji';
 	font-size: 14px;
 	font-weight: 500;
 	line-height: 24px;
@@ -136,7 +218,7 @@
 	background-color: #ffffff11;
 	color: #fff;
 }
-.lang-select-options.active{
+.lang-select-options.active {
 	width: 100%;
 	opacity: 1;
 }
@@ -152,13 +234,11 @@
 .mobile-menu {
 	display: block;
 	position: absolute;
-	top: -1px;
+	top: 0;
 	right: 0;
 	width: 40px;
 	height: 40px;
 	background-color: transparent;
-	font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-		'Noto Color Emoji';
 	color: #fff;
 	overflow: hidden;
 	transition: top 0.5s, right 0.5s, width 0.5s, height 0.5s, background-color 0.2s;
@@ -231,8 +311,6 @@
 	padding: 0 1.5rem;
 	height: calc(100vh - 120px);
 	z-index: 10;
-	font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-		'Noto Color Emoji';
 	line-height: 24px;
 	text-align: center;
 }
@@ -311,6 +389,9 @@
 	align-items: center;
 	width: 100%;
 	background-color: #f9f9f9;
+	background-image: url('img/background.jpg');
+	background-size: 600px;
+	background-position: center;
 }
 /* -----SECTION----- */
 /* -----TOUR GUIDE----- */
@@ -335,38 +416,44 @@
 	letter-spacing: 0.1em;
 }
 .tour-guide-header h2 {
-	font-size: 2.25rem;
+	font-size: 3.5rem;
 	font-weight: 700;
-	margin-top: 1rem;
+	margin-top: 1.5rem;
 }
 .tour-guide-header p {
 	color: #000000cc;
 	font-size: 1.1rem;
 	line-height: 1.5;
-	margin: 0.5rem 0 1rem 0;
+	margin: 1rem 0 1rem 0;
 }
-.tour-guide-header button {
+
+/* -----ATTRACTION CARDS CONTAINER----- */
+.tour-guide-section.attractions {
+	background-color: #fafaf9;
+}
+.tour-guide-section.attractions button {
 	background-color: #059669;
 	color: #fff;
 	font-size: 1rem;
 	font-weight: 600;
 	padding: 0.75rem 1.5rem;
+	margin-top: 2.5rem;
 	border: 3px solid #05966933;
 	border-radius: 20px;
 	box-shadow: 0 4px 12px #00000033;
 	cursor: pointer;
 	transition: 0.3s ease;
 }
-.tour-guide-header button:hover {
+.tour-guide-section.attractions button:hover {
 	background-color: #047857;
 	transform: translateY(-2px);
 }
-
 /* -----CARDS----- */
 .tour-guide-container {
 	display: grid;
-	grid-template-columns: repeat(1, 1fr);
-	justify-items: center;
+	grid-template-columns: repeat(1, 300px);
+	justify-content: center;
+	align-self: center;
 	gap: 2rem;
 	width: 100%;
 }
@@ -376,27 +463,192 @@
 	justify-content: flex-end;
 	align-items: left;
 	box-sizing: border-box;
+	border: 2px solid #00000033;
+	border-radius: 12px;
+	box-shadow: 0 4px 12px #00000033;
 	width: 300px;
 	height: 350px;
 	cursor: pointer;
 	background-image: url('img/sample.png');
 	background-size: cover;
 	background-position: center;
+	background-repeat: no-repeat;
 	transition: 0.3s ease;
-	border: 1px solid black; /* borda temporaria */
 }
 .attraction-card:hover {
 	transform: translateY(-5px);
+	border-color: #3c8f75;
+	box-shadow: 0 6px 16px #00000055;
+}
+.attraction-card.pontoes-capixabas {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3), rgba(80, 103, 51, 0.5)),
+		url('img/pontoes-capixabas-card.jpg');
+}
+.attraction-card.trilhas {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3), rgba(85, 46, 26, 0.5)),
+		url('img/trilha-card.jpg');
+}
+.attraction-card.tirolesa {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3), rgba(54, 64, 34, 0.5)),
+		url('img/tirolesa-card.png');
+}
+.attraction-card.voo-livre {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3), rgba(78, 122, 141, 0.5)),
+		url('img/voo-livre-card.jpg');
 }
 .attraction-card h3 {
 	color: #fff;
-	font-size: 1.5rem;
+	font-size: 2rem;
 	font-weight: 700;
 	margin-bottom: 1rem;
 	text-shadow: 0 2px 4px #00000099;
 	padding: 1rem;
 }
-/* DESKTOP SCREEN */
+/* -----MAP SECTION----- */
+.tour-guide-section.guide-map {
+	background-color: #ffffff;
+}
+
+/* -----MAP LEGEND----- */
+.map-legend {
+	display: flex;
+	justify-content: center;
+	margin-top: 2rem;
+}
+.map-legend ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem 1rem;
+	list-style: none;
+	justify-content: center;
+}
+.map-legend li {
+	display: flex;
+	align-items: center;
+	background-color: #c3c3c330;
+	border-radius: 8px;
+	padding: 0.5rem;
+	gap: 0.5rem;
+	font-size: 1rem;
+	color: #333;
+}
+.legend-icon {
+	display: inline-block;
+	width: 0.5rem;
+	height: 0.5rem;
+	background-color: #059669;
+	border-radius: 50%;
+}
+.legend-icon.monumentos {
+	background-color: #9c27b0;
+}
+.legend-icon.gastronomia {
+	background-color: #f57c00;
+}
+.legend-icon.hospedagem {
+	background-color: #c2185b;
+}
+.legend-icon.servicos {
+	background-color: #0288d1;
+}
+.legend-icon.experiencias {
+	background-color: #ffd600;
+}
+
+/* -----FOOTER----- */
+footer {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	color: #fff;
+	background-color: #212121;
+}
+/* FOOTER TOP SECTION */
+.footer-top-container {
+	margin: 15px 15%;
+}
+.footer-top {
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+/* FOOTER NAV */
+.footer-top nav {
+	padding: 8px 0;
+}
+.footer-top nav ul {
+	display: flex;
+	justify-content: space-between;
+	gap: 15px;
+}
+.footer-top nav ul a {
+	text-decoration: none;
+	background-color: #212121bf;
+	border-radius: 8px;
+	font-size: 1rem;
+	color: #ffffffbf;
+	padding: 8px 15px;
+	cursor: pointer;
+	transition: 0.3s ease;
+}
+.footer-top nav ul a:hover {
+	background-color: #111111bf;
+	color: #fff;
+}
+.footer-logo-title {
+	font-size: 1.2rem;
+	color: #fff;
+	font-weight: 700;
+}
+/* FOOTER BREAK LINE */
+.footer-break-line {
+	border: 0;
+	border-top: 1px solid #ffffffbf;
+	width: 80%;
+	margin: 2px auto;
+}
+/* FOOTER ABOUT SECTION */
+.footer-about {
+	margin: 15px 15%;
+	display: flex;
+	flex-direction: column;
+}
+.footer-about-title {
+	font-size: 1.2rem;
+	color: #fff;
+	margin-bottom: 10px;
+}
+.footer-about-text {
+	font-size: 1rem;
+	color: #ffffffbf;
+	margin-bottom: 10px;
+}
+/* MEDIA */
+.fa-media {
+	font-size: 1.5rem;
+	color: #fff;
+	transition: 0.3s ease;
+}
+.fa-media:hover {
+	transform: scale(105%);
+	color: #ffffffbf;
+}
+/* SUB FOOTER */
+.sub-footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #111111;
+}
+.sub-footer p {
+	color: #ffffffbf;
+	margin: 6px 0;
+	text-align: center;
+}
+
+/* TABLET SCREEN */
 @media screen and (min-width: 768px) {
 	.mobile-menu {
 		display: none;
@@ -415,16 +667,51 @@
 		font-size: 1.25rem;
 	}
 	.tour-guide-container {
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(2, 300px);
+	}
+	.tour-guide-section.guide-map iframe {
+		width: 600px;
+		height: 450px;
+		border: 3px solid #00000011;
+		box-shadow: 0 4px 12px #00000033;
+		border-radius: 20px;
+	}
+	.footer-top {
+		flex-direction: row;
 	}
 }
 
-/* BIG DESKTOP SCREEN */
+/* DESKTOP SCREEN */
 @media screen and (min-width: 1024px) {
 	.hero-content h1 {
 		font-size: 6rem;
 	}
 	.tour-guide-container {
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(3, 300px);
+	}
+	.tour-guide-section.guide-map iframe {
+		width: 900px;
+		height: 600px;
+	}
+}
+/* BIG DESKTOP SCREEN */
+@media screen and (min-width: 1200px) {
+	.tour-guide-container {
+		grid-template-columns: repeat(3, 300px);
+	}
+	.tour-guide-section.guide-map iframe {
+		width: 1100px;
+		height: 600px;
+	}
+}
+
+/* WIDE DESKTOP SCREEN */
+@media screen and (min-width: 1400px) {
+	.tour-guide-container {
+		grid-template-columns: repeat(4, 300px);
+	}
+	.tour-guide-section.guide-map iframe {
+		width: 1200px;
+		height: 600px;
 	}
 }

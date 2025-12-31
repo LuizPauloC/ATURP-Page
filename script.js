@@ -1,61 +1,67 @@
-// VARIAVEIS MOBILE-MENU
-const mobile_menu = document.querySelector('.mobile-menu');
-const menu_nav_btn = document.querySelector('.mobile-menu-btn');
-const fa_bars = document.querySelector('.fa-bars');
-const fa_xmark = document.querySelector('.fa-xmark');
-const mobile_menu_list = document.querySelector('.mobile-menu-list');
-// VARIAVEIS LANGUAGE
-const langSelector = document.querySelector('.lang-select');
-const langOptions = document.querySelector('.lang-select-options');
-const langOptionElements = document.querySelectorAll('.lang-option');
-const selectedLangElement = document.querySelector('.selected-lang');
-// EVENTOS
-const heroButton = document.querySelector('.hero-scroll-button');
-heroButton.addEventListener('click', () => {
-	// Scroll suave até a seção do main
-	document.getElementById('main').scrollIntoView({ behavior: 'smooth' });
-	
+document.documentElement.classList.add('is-loading');
+
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => document.querySelectorAll(s);
+
+// Smooth scroll for [data-scroll] elements
+document.addEventListener('click', (e) => {
+	const btn = e.target.closest('[data-scroll]');
+	if (!btn) return;
+	e.preventDefault();
+	const sel = btn.dataset.scroll;
+	if (!sel) return;
+	const target =
+		sel.startsWith('#') || sel.startsWith('.')
+			? document.querySelector(sel)
+			: document.getElementById(sel) || document.querySelector(sel);
+	if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
-// CODIGO MOBILE-MENU
-menu_nav_btn.addEventListener('click', () => {
-	// Muda as classes
-	fa_bars.classList.toggle('hidden');
-	fa_xmark.classList.toggle('hidden');
-	mobile_menu.classList.toggle('open');
-	mobile_menu_list.classList.toggle('open');
-});
+// UI behaviors (mobile menu, lang, page show + animations)
+document.addEventListener('DOMContentLoaded', () => {
+	const menuBtn = $('.mobile-menu-btn');
+	const mobileMenu = $('.mobile-menu');
+	const mobileList = $('.mobile-menu-list');
+	const faBars = $('.fa-bars');
+	const faX = $('.fa-xmark');
+	const langSelector = $('.lang-select');
+	const langOptions = $('.lang-select-options');
+	const langItems = $$('.lang-option');
+	const selectedLang = $('.selected-lang');
 
-// fecha o menu ao clicar fora dele
-document.addEventListener('click', (event) => {
-	const isClickInside = mobile_menu.contains(event.target) || menu_nav_btn.contains(event.target);
-	if (!isClickInside) {
-		fa_bars.classList.remove('hidden');
-		fa_xmark.classList.add('hidden');
-		mobile_menu.classList.remove('open');
-		mobile_menu_list.classList.remove('open');
-	}	
-});
+	menuBtn?.addEventListener('click', () => {
+		faBars?.classList.toggle('hidden');
+		faX?.classList.toggle('hidden');
+		mobileMenu?.classList.toggle('open');
+		mobileList?.classList.toggle('open');
+	});
 
-// CODIGO LANGUAGE
-langSelector.addEventListener('click', () => {
-	langOptions.classList.toggle('active');
-});
+	langSelector?.addEventListener('click', () => langOptions?.classList.toggle('active'));
+	langItems.forEach((li) =>
+		li.addEventListener('click', () => {
+			if (selectedLang) selectedLang.textContent = li.textContent;
+			langOptions?.classList.remove('active');
+		})
+	);
 
-// Fecha o menu de linguagem ao clicar fora dele
-document.addEventListener('click', (event) => {
-	const isClickInside = langSelector.contains(event.target);
-	if (!isClickInside) {
-		langOptions.classList.remove('active');
-	}
-});
-
-// Seleciona a lingua
-langOptionElements.forEach(option => {
-	option.addEventListener('click', () => {
-		const selectedLang = option.textContent;
-		selectedLangElement.textContent = selectedLang;
-		langOptions.classList.remove('active');
+	document.addEventListener('click', (ev) => {
+		const t = ev.target;
+		if (mobileMenu && menuBtn && !mobileMenu.contains(t) && !menuBtn.contains(t)) {
+			faBars?.classList.remove('hidden');
+			faX?.classList.add('hidden');
+			mobileMenu.classList.remove('open');
+			mobileList?.classList.remove('open');
+		}
+		if (langSelector && !langSelector.contains(t)) langOptions?.classList.remove('active');
 	});
 });
 
+// show page and trigger animations after full load
+window.addEventListener('load', () => {
+	document.documentElement.classList.remove('is-loading');
+	document.documentElement.classList.add('is-loaded');
+	setTimeout(() => document.body.classList.add('is-ready'), 20);
+
+	$('.hero-content')?.classList.add('animate-in');
+	document.querySelector('.hero nav')?.classList.add('nav-animate');
+});
