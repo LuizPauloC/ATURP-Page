@@ -1,0 +1,131 @@
+/* -----GERAL----- */
+* {
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+}
+.hidden {
+	display: none;
+}
+
+/* -----SITE LOADING----- */
+.is-loading body {
+	visibility: hidden;
+}
+body {
+	font-family:
+		ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	opacity: 0;
+	transition: opacity 300ms ease;
+}
+body.is-ready {
+	opacity: 1;
+}
+
+/* -----FOOTER----- */
+footer {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	color: #fff;
+	background-color: #212121;
+}
+/* FOOTER TOP SECTION */
+.footer-top-container {
+	margin: 15px 15%;
+}
+.footer-top {
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+/* FOOTER NAV */
+.footer-top nav {
+	padding: 8px 0;
+}
+.footer-top nav ul {
+	display: flex;
+	justify-content: space-between;
+	gap: 15px;
+}
+.footer-top nav ul a {
+	text-decoration: none;
+	background-color: #212121bf;
+	border-radius: 8px;
+	font-size: 1rem;
+	color: #ffffffbf;
+	padding: 8px 15px;
+	cursor: pointer;
+	transition: 0.3s ease;
+}
+.footer-top nav ul a:hover {
+	background-color: #111111bf;
+	color: #fff;
+}
+.footer-logo-title {
+	font-size: 1.2rem;
+	color: #fff;
+	font-weight: 700;
+}
+/* FOOTER BREAK LINE */
+.footer-break-line {
+	border: 0;
+	border-top: 1px solid #ffffffbf;
+	width: 80%;
+	margin: 2px auto;
+}
+/* FOOTER ABOUT SECTION */
+.footer-about {
+	margin: 15px 15%;
+	display: flex;
+	flex-direction: column;
+}
+.footer-about-title {
+	font-size: 1.2rem;
+	color: #fff;
+	margin-bottom: 10px;
+}
+.footer-about-text {
+	font-size: 1rem;
+	color: #ffffffbf;
+	margin-bottom: 10px;
+}
+/* MEDIA */
+.fa-media {
+	font-size: 1.5rem;
+	color: #fff;
+	transition: 0.3s ease;
+}
+.fa-media:hover {
+	transform: scale(105%);
+	color: #ffffffbf;
+}
+/* SUB FOOTER */
+.sub-footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #111111;
+}
+.sub-footer p {
+	color: #ffffffbf;
+	margin: 6px 0;
+	text-align: center;
+}
+/* -----MEDIA QUERIES----- */
+/* TABLET SCREEN */
+@media screen and (min-width: 768px) {
+	.footer-top {
+		flex-direction: row;
+	}
+}
+/* DESKTOP SCREEN */
+@media screen and (min-width: 1024px) {
+}
+/* BIG DESKTOP SCREEN */
+@media screen and (min-width: 1200px) {
+}
+/* WIDE DESKTOP SCREEN */
+@media screen and (min-width: 1400px) {
+}

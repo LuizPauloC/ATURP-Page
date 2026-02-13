@@ -1,28 +1,3 @@
-/* -----GERAL----- */
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	-webkit-tap-highlight-color: transparent;
-}
-.hidden {
-	display: none;
-}
-
-/* -----SITE LOADING----- */
-.is-loading body {
-	visibility: hidden;
-}
-body {
-	font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-		'Noto Color Emoji';
-	opacity: 0;
-	transition: opacity 300ms ease;
-}
-body.is-ready {
-	opacity: 1;
-}
-
 /* -----ANIMAÇÕES----- */
 .hero-content h1,
 .hero-content p,
@@ -102,8 +77,8 @@ body.is-ready {
 	width: 100%;
 	height: 100dvh;
 	background-color: #425065;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
-		url('img/paisagem-grande.JPG');
+	background-image:
+		linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)), url('/assets/img/paisagem-grande.JPG');
 	background-size: cover;
 	background-position: center;
 	overflow: hidden;
@@ -121,19 +96,29 @@ body.is-ready {
 	z-index: 20;
 }
 /* -----LOGO----- */
+.logo:hover {
+	cursor: pointer;
+}
 /* -----DESKTOP MENU----- */
 .desktop-menu {
-	gap: 2rem;
+	width: 26em;
+	justify-content: space-between;
 	align-items: center;
 	box-sizing: border-box;
+	padding: 0px 10px;
+	border-radius: 8px;
 }
 /* DESKTOP MENU ITEMS */
 .desktop-menu button {
 	position: relative;
 	color: #fff;
-	font-weight: 400;
+	text-shadow: #9b9b9b 1px 1px 4px;
+	font-family:
+		ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	font-weight: 600;
 	font-size: 1rem;
 	line-height: 20px;
+	padding: 10px 10px;
 	cursor: pointer;
 	background-color: transparent;
 	border: none;
@@ -202,7 +187,10 @@ body.is-ready {
 	overflow: hidden;
 	box-shadow: 0 4px 12px #00000066;
 	z-index: 10;
-	transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+	transition:
+		width 0.3s ease,
+		height 0.3s ease,
+		opacity 0.3s ease;
 }
 .lang-option {
 	padding: 8px 12px;
@@ -241,7 +229,12 @@ body.is-ready {
 	background-color: transparent;
 	color: #fff;
 	overflow: hidden;
-	transition: top 0.5s, right 0.5s, width 0.5s, height 0.5s, background-color 0.2s;
+	transition:
+		top 0.5s,
+		right 0.5s,
+		width 0.5s,
+		height 0.5s,
+		background-color 0.2s;
 	z-index: 5;
 	border-radius: 20px;
 }
@@ -389,7 +382,7 @@ body.is-ready {
 	align-items: center;
 	width: 100%;
 	background-color: #f9f9f9;
-	background-image: url('img/background.jpg');
+	background-image: url('assets/img/background.jpg');
 	background-size: 600px;
 	background-position: center;
 }
@@ -432,6 +425,8 @@ body.is-ready {
 	background-color: #fafaf9;
 }
 .tour-guide-section.attractions button {
+	font-family:
+		ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 	background-color: #059669;
 	color: #fff;
 	font-size: 1rem;
@@ -469,7 +464,7 @@ body.is-ready {
 	width: 300px;
 	height: 350px;
 	cursor: pointer;
-	background-image: url('img/sample.png');
+	background-image: url('assets/img/sample.png');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -481,20 +476,23 @@ body.is-ready {
 	box-shadow: 0 6px 16px #00000055;
 }
 .attraction-card.pontoes-capixabas {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3), rgba(80, 103, 51, 0.5)),
-		url('img/pontoes-capixabas-card.jpg');
+	background-image:
+		linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3), rgba(80, 103, 51, 0.5)),
+		url('/assets/img/pontoes-capixabas-card.jpg');
 }
 .attraction-card.trilhas {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3), rgba(85, 46, 26, 0.5)),
-		url('img/trilha-card.jpg');
+	background-image:
+		linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3), rgba(85, 46, 26, 0.5)), url('/assets/img/trilha-card.jpg');
 }
 .attraction-card.tirolesa {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3), rgba(54, 64, 34, 0.5)),
-		url('img/tirolesa-card.png');
+	background-image:
+		linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3), rgba(54, 64, 34, 0.5)),
+		url('/assets/img/tirolesa-card.png');
 }
 .attraction-card.voo-livre {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3), rgba(78, 122, 141, 0.5)),
-		url('img/voo-livre-card.jpg');
+	background-image:
+		linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3), rgba(78, 122, 141, 0.5)),
+		url('/assets/img/voo-livre-card.jpg');
 }
 .attraction-card h3 {
 	color: #fff;
@@ -555,99 +553,6 @@ body.is-ready {
 	background-color: #ffd600;
 }
 
-/* -----FOOTER----- */
-footer {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	color: #fff;
-	background-color: #212121;
-}
-/* FOOTER TOP SECTION */
-.footer-top-container {
-	margin: 15px 15%;
-}
-.footer-top {
-	display: flex;
-	flex-direction: column-reverse;
-	align-items: center;
-	justify-content: space-between;
-	width: 100%;
-}
-/* FOOTER NAV */
-.footer-top nav {
-	padding: 8px 0;
-}
-.footer-top nav ul {
-	display: flex;
-	justify-content: space-between;
-	gap: 15px;
-}
-.footer-top nav ul a {
-	text-decoration: none;
-	background-color: #212121bf;
-	border-radius: 8px;
-	font-size: 1rem;
-	color: #ffffffbf;
-	padding: 8px 15px;
-	cursor: pointer;
-	transition: 0.3s ease;
-}
-.footer-top nav ul a:hover {
-	background-color: #111111bf;
-	color: #fff;
-}
-.footer-logo-title {
-	font-size: 1.2rem;
-	color: #fff;
-	font-weight: 700;
-}
-/* FOOTER BREAK LINE */
-.footer-break-line {
-	border: 0;
-	border-top: 1px solid #ffffffbf;
-	width: 80%;
-	margin: 2px auto;
-}
-/* FOOTER ABOUT SECTION */
-.footer-about {
-	margin: 15px 15%;
-	display: flex;
-	flex-direction: column;
-}
-.footer-about-title {
-	font-size: 1.2rem;
-	color: #fff;
-	margin-bottom: 10px;
-}
-.footer-about-text {
-	font-size: 1rem;
-	color: #ffffffbf;
-	margin-bottom: 10px;
-}
-/* MEDIA */
-.fa-media {
-	font-size: 1.5rem;
-	color: #fff;
-	transition: 0.3s ease;
-}
-.fa-media:hover {
-	transform: scale(105%);
-	color: #ffffffbf;
-}
-/* SUB FOOTER */
-.sub-footer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: #111111;
-}
-.sub-footer p {
-	color: #ffffffbf;
-	margin: 6px 0;
-	text-align: center;
-}
-
 /* TABLET SCREEN */
 @media screen and (min-width: 768px) {
 	.mobile-menu {
@@ -675,9 +580,6 @@ footer {
 		border: 3px solid #00000011;
 		box-shadow: 0 4px 12px #00000033;
 		border-radius: 20px;
-	}
-	.footer-top {
-		flex-direction: row;
 	}
 }
 
