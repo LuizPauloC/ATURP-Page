@@ -1,0 +1,255 @@
+.body {
+	background-color: #f8f8f8;
+}
+
+/* -----HEADER----- */
+.header {
+	display: flex;
+	justify-content: flex-start;
+	position: sticky;
+	top: 0px;
+	min-width: 100%;
+	height: 65px;
+	background-color: #f9f9f9;
+	border-bottom: 1px solid #e0e0e0;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.header-return-page {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	padding: 0 24px;
+	height: 100%;
+}
+.header-return-page svg {
+	width: 16px;
+	height: auto;
+}
+.header-return-page:hover,
+.header-logo:hover {
+	cursor: pointer;
+}
+
+/* -----MAIN----- */
+main {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	box-sizing: border-box;
+}
+/* -----HERO-CONTENT----- */
+.hero-content {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	max-width: 728px;
+}
+.content-desc {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	height: max-content;
+	margin-bottom: 20px;
+	grid-area: desc;
+}
+.desc-title {
+	color: #383838;
+	font-size: 2rem;
+	font-weight: bold;
+}
+.desc-local-div {
+	display: flex;
+	align-items: center;
+	gap: 3px;
+}
+.desc-local-div img {
+	height: 1rem;
+}
+.desc-local-div p {
+	display: flex;
+	color: #7c7c7c;
+	font-size: 1rem;
+}
+.desc-local-div a {
+	color: #27a8ff;
+	font-weight: 600;
+}
+.desc-local-div a:hover {
+	cursor: pointer;
+}
+
+.desc-text {
+	color: #383838;
+	font-size: 1.2rem;
+	line-height: 1.3rem;
+	margin-bottom: 3px;
+}
+.desc-text-expand {
+	color: #27a8ff;
+	font-weight: 600;
+	text-decoration: underline 1px;
+	width: max-content;
+}
+.desc-text-expand:hover {
+	cursor: pointer;
+}
+
+/* -----HERO-PHOTOS----- */
+.content-photos {
+	position: relative;
+	width: 100%;
+	max-width: 728px;
+	height: min-content;
+	grid-area: photos;
+}
+.content-photos-btn {
+	position: absolute;
+	z-index: 10;
+	bottom: 20px;
+	right: 10px;
+	color: #27a8ff;
+	font-size: 1rem;
+	padding: 5px 10px;
+	background: #fff;
+	border-color: #27a8ff;
+	border-radius: 5px;
+}
+.content-photos-btn:hover {
+	cursor: pointer;
+}
+/*-----SWIPER-----*/
+.swiper {
+	width: 100%;
+	height: auto;
+	background: #6b7279;
+	border-radius: 10px;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-slide {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.swiper-zoom-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+	height: auto;
+	max-height: 90%;
+	object-fit: contain;
+	z-index: 1;
+	position: relative;
+}
+/* -----HERO-AMENETIES----- */
+.content-ameneties {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 800px;
+	height: max-content;
+	padding-top: 20px;
+	margin-top: 20px;
+	color: #383838;
+	border-top: 1px solid #e0e0e0;
+	grid-area: amenities;
+}
+.ameneties-title {
+	color: #383838;
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.ameneties-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 5px;
+}
+.ameneties-item {
+	display: flex;
+	gap: 10px;
+	align-items: top;
+	color: black;
+	font-size: 1.2rem;
+	width: 235px;
+	height: 60px;
+	line-height: 1.5rem;
+	padding: 5px 10px;
+}
+.ameneties-item img {
+	width: 30px;
+	height: 30px;
+	margin-top: 5px;
+}
+.ameneties-list-expand {
+	display: flex;
+	align-items: center;
+	color: #27a8ff;
+	height: 30px;
+	font-weight: 600;
+	text-decoration: underline 1px;
+	width: max-content;
+}
+.ameneties-list-expand:hover {
+	cursor: pointer;
+}
+/* -----MEDIA QUERIES----- */
+/* TABLET SCREEN */
+@media screen and (min-width: 768px) {
+	.main {
+		align-items: center;
+	}
+}
+/* SMALL DESKTOP SCREEN */
+@media screen and (min-width: 1024px) {
+}
+/* DESKTOP SCREEN */
+@media screen and (min-width: 1200px) {
+}
+/* BIG DESKTOP SCREEN */
+@media screen and (min-width: 1400px) {
+	main {
+		align-items: stretch;
+	}
+	.swiper {
+		height: 550px;
+	}
+	.hero-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+		grid-template-areas:
+			'photos desc'
+			'photos amenities';
+		align-self: center;
+	}
+	.content-desc {
+		width: 600px;
+		margin-bottom: 0;
+	}
+	.content-ameneties {
+		width: 600px;
+		margin-top: 0;
+	}
+}
+/* WIDE DESKTOP SCREEN */
+@media screen and (min-width: 1600px) {
+	.content-desc {
+		width: 800px;
+		margin-bottom: 0;
+	}
+	.content-ameneties {
+		width: 800px;
+		margin-top: 0;
+	}
+}

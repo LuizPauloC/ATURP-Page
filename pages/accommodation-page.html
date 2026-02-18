@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Accommodation Page Model</title>
+		<!-- ICON -->
+		<!-- <link rel="icon" type="image/png" href="./assets/img/page-icon.png" /> -->
+		<!-- STYLES -->
+		<link rel="stylesheet" href="/css/reset.css" />
+		<link rel="stylesheet" href="/css/main.css" />
+		<link rel="stylesheet" href="/css/accommodation-page.css" />
+		<!-- FONTS-AWESOME -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+			integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<!-- SWIPER -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+	</head>
+	<body>
+		<header class="header">
+			<a href="/index.html"></a>
+				<div class="header-return-page">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+						<path
+							d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+						/>
+					</svg>
+					<img src="/assets/img/aturp-logo-nobk.png" alt="aturp-logo" width="auto" height="40px"/>
+				</div>
+			</a>
+		</header>
+
+		<main>
+			<nav class="nav-bar">
+				<div class="nav-list">
+					<div class="nav-item"></div>
+					<div class="nav-item"></div>
+					<div class="nav-item"></div>
+					<div class="nav-item"></div>
+				</div>
+			</nav>
+			<div class="hero">
+				<div class="hero-content">
+					<div class="content-desc">
+						<h1 class="desc-title">Hospedagem</h1>
+						<div class="desc-local-div">
+							<img src="/assets/ameneties-icons/location.png" alt="" />
+							<p>R.Lorem Ipsum 00 Lorem</p>
+							<a>Ver no mapa</a>
+						</div>
+						<div class="desc-text-div">
+							<p class="desc-text">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum tincidunt magna
+								accumsan tempus. Ut sit amet laoreet mi, ut semper nisl. Donec sollicitudin faucibus commodo.
+							</p>
+							<p class="desc-text-expand">Ler mais</p>
+						</div>
+					</div>
+
+					<div class="content-photos">
+						<div class="swiper mySwiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="swiper-zoom-container">
+										<img
+											src="../assets/img/paisagem-grande.JPG"
+											data-src="../assets/img/paisagem-grande.JPG"
+											class="swiper-lazy"
+											alt="Imagem Horizontal"
+										/>
+										<div class="swiper-lazy-preloader"></div>
+									</div>
+								</div>
+
+								<div class="swiper-slide">
+									<div class="swiper-zoom-container">
+										<img
+											src="../assets/img/paisagem-grande.JPG"
+											data-src="../assets/img/paisagem-grande.JPG"
+											class="swiper-lazy"
+											alt="Imagem Vertical"
+										/>
+										<div class="swiper-lazy-preloader"></div>
+									</div>
+								</div>
+							</div>
+
+							<div class="swiper-pagination"></div>
+						</div>
+						<button
+							class="content-photos-btn"
+							onclick="window.location.href = '/pages/accommodation-galery.html'"
+						>
+							<p>Ver todas as fotos</p>
+						</button>
+					</div>
+
+					<div class="content-ameneties">
+						<h2 class="ameneties-title">A hospedagem oferece</h2>
+						<div class="ameneties-list">
+							<div class="ameneties-item">
+								<img src="/assets/ameneties-icons/laundry.png" alt="nome-alternativo" />
+								<p>Lavanderia</p>
+							</div>
+							<div class="ameneties-item">
+								<img src="/assets/ameneties-icons/swimming-pool.png" alt="nome-alternativo" />
+								<p>Piscina Interna</p>
+							</div>
+							<div class="ameneties-item">
+								<img src="/assets/ameneties-icons/dog.png" alt="nome-alternativo" />
+								<p>Permitido Pets</p>
+							</div>
+							<div class="ameneties-item">
+								<img src="/assets/ameneties-icons/wifi-router.png" alt="nome-alternativo" />
+								<p>Internet Banda Larga</p>
+							</div>
+							<div class="ameneties-item">
+								<img src="/assets/ameneties-icons/parking-sign.png" alt="nome-alternativo" />
+								<p>Estacionamento Gratuito</p>
+							</div>
+						</div>
+						<div class="ameneties-list-expand">
+							<p>Veja mais comodidades</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-----FOOTER----->
+		<!-- <footer>
+			<div class="footer-top-container">
+				<div class="footer-top">
+					<nav>
+						<ul>
+							<li><a data-scroll="body">Início</a></li>
+						</ul>
+					</nav>
+					<h2 class="footer-logo-title">ATURP</h2>
+				</div>
+			</div>
+
+			<div class="footer-about">
+				<h2 class="footer-about-title">ATURP - Associação Turística de Pancas</h2>
+				<p class="footer-about-text">
+					Promovendo o turismo, a cultura e o desenvolvimento sustentável de Pancas, valorizando suas belezas
+					naturais e tradições.
+				</p>
+				<div class="midias">
+					<ul>
+						<li name="instagram">
+							<a href="https://www.instagram.com/aturp_"><i class="fa-brands fa-media fa-instagram"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			SUB_FOOTER
+			<div class="sub-footer">
+				<div>
+					<p>© 2026 ATURP - Associação Turística de Pancas</p>
+				</div>
+			</div>
+		</footer> -->
+		<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+		<script src="../js/swiper.js"></script>
+		<script src="../js/script.js"></script>
+	</body>
+</html>

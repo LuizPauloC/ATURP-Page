@@ -27,5 +27,3 @@ window.addEventListener('load', () => {
 		window.dispatchEvent(event);
 	}, 20);
 });
-
-
