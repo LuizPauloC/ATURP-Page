@@ -3,18 +3,19 @@ const swiper = new Swiper('.mySwiper', {
 	spaceBetween: 15,
 	loop: true,
 	lazy: {
-		loadPrevNext: true, // Pré-carrega a imagem anterior e a próxima para suavidade
-	},
-	zoom: {
-		maxRatio: 3, // Máximo de zoom ao clicar
-		minRatio: 1, // Mínimo de zoom
+		loadPrevNext: 1, // Pré-carrega a imagem anterior e a próxima para suavidade
 	},
 	pagination: {
 		el: '.swiper-pagination',
+		dynacmicBullets: true,
 		clickable: true,
 	},
 	autoplay: {
 		delay: 6000,
 		disableOnInteraction: false,
+	},
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
 	},
 });

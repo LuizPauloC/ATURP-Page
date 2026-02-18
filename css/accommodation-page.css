@@ -54,9 +54,9 @@ main {
 	grid-area: desc;
 }
 .desc-title {
-	color: #383838;
+	color: #000;
 	font-size: 2rem;
-	font-weight: bold;
+	font-weight: 800;
 }
 .desc-local-div {
 	display: flex;
@@ -68,11 +68,11 @@ main {
 }
 .desc-local-div p {
 	display: flex;
-	color: #7c7c7c;
+	color: #303030;
 	font-size: 1rem;
 }
 .desc-local-div a {
-	color: #27a8ff;
+	color: #007b3a;
 	font-weight: 600;
 }
 .desc-local-div a:hover {
@@ -80,13 +80,13 @@ main {
 }
 
 .desc-text {
-	color: #383838;
+	color: #000000;
 	font-size: 1.2rem;
 	line-height: 1.3rem;
 	margin-bottom: 3px;
 }
 .desc-text-expand {
-	color: #27a8ff;
+	color: #007b3a;
 	font-weight: 600;
 	text-decoration: underline 1px;
 	width: max-content;
@@ -108,11 +108,11 @@ main {
 	z-index: 10;
 	bottom: 20px;
 	right: 10px;
-	color: #27a8ff;
+	color: #007b3a;
 	font-size: 1rem;
 	padding: 5px 10px;
 	background: #fff;
-	border-color: #27a8ff;
+	border-color: #007b3a;
 	border-radius: 5px;
 }
 .content-photos-btn:hover {
@@ -121,36 +121,33 @@ main {
 /*-----SWIPER-----*/
 .swiper {
 	width: 100%;
-	height: auto;
-	background: #6b7279;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	background: #323f4d;
 	border-radius: 10px;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: #323f4d;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: relative;
 }
-
-.swiper-zoom-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	height: 100%;
-	position: relative;
-}
-
 .swiper-slide img {
 	display: block;
+	height: 100%;
 	width: 100%;
-	height: auto;
-	max-height: 90%;
-	object-fit: contain;
-	z-index: 1;
-	position: relative;
+	object-fit: cover;
+}
+.swiper-button-next svg,
+.swiper-button-prev svg {
+	color: #007b3a;
+}
+.swiper-pagination span {
+	background-color: #007b3a;
 }
 /* -----HERO-AMENETIES----- */
 .content-ameneties {
@@ -166,14 +163,14 @@ main {
 	grid-area: amenities;
 }
 .ameneties-title {
-	color: #383838;
-	font-size: 1.5rem;
-	font-weight: bold;
+	color: #000000;
+	font-size: 1.6rem;
+	font-weight: 800;
 	margin-bottom: 20px;
 }
 .ameneties-list {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 	grid-gap: 5px;
 }
 .ameneties-item {
@@ -195,7 +192,7 @@ main {
 .ameneties-list-expand {
 	display: flex;
 	align-items: center;
-	color: #27a8ff;
+	color: #007b3a;
 	height: 30px;
 	font-weight: 600;
 	text-decoration: underline 1px;
@@ -222,8 +219,9 @@ main {
 	main {
 		align-items: stretch;
 	}
-	.swiper {
+	.content-photos {
 		height: 550px;
+		width: 1200px;
 	}
 	.hero-content {
 		display: grid;
